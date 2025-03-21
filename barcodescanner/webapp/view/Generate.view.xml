@@ -1,0 +1,79 @@
+<mvc:View controllerName="barcodescanner.controller.Generate"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core">
+    <App id="app_generate">
+    <pages>
+        <Page id="gen_page" title="Generate QR Code" class="sapUiSizeCompact">
+            <content>
+                <f:SimpleForm
+                    id="simple_form"
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    labelSpanXL="3" 
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="4"
+                    emptySpanL="4"
+                    emptySpanM="4"
+                    emptySpanS="0"
+                    columnsXL="1"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false">
+
+                    <f:content >
+                        <Label id="GId" text="Id"/>
+                        <Input id="GIId" value="{/Id}"/>
+
+                        <Label id="GName" text="Name"/>
+                        <Input id="GIName" value="{/Name}"/>
+                        
+                        <Label id="GDepartment" text="Department"/>
+                        <Input id="GIDepartment" value="{/Department}"/>
+
+                        <Label id="GDob" text="Date of Birth"/>
+                        <DatePicker id="GIDob" value="{/Dob}"/>
+
+                        <Label id="GSalary" text="Salary"/>
+                        <Input id="GISalary" type="Number" value="{/Salary}" />
+
+                        <Label id="GMobNo" text="Mobile Number" />
+                        <Input id="GIMobNo" type="Tel" value="{/MobNo}"/>
+                        
+                        <Button id="GBtn" icon="sap-icon://generate-shortcut" text="Generate QR Code" type="Accept" press="GenerateQRCode">
+                            <layoutData>
+                                <l:GridData id="GGD" span="XL1 L2 M2 S4"/>
+                            </layoutData>
+                        </Button>
+
+                        <Button id="GBtn2" icon="sap-icon://generate-shortcut" text="Generate BarCode" type="Accept" press="GenerateBarCode">
+                            <layoutData>
+                                <l:GridData id="GGD2" span="XL1 L2 M2 S4"/>
+                            </layoutData>
+                        </Button>
+                    </f:content>
+                </f:SimpleForm>
+
+                <HBox id="GHbox">
+                    <Image densityAware="false" id="imgId">
+                        <layoutData>
+                            <FlexItemData id="GFID" growFactor="1"/>
+                        </layoutData>
+                    </Image>
+                    <Image  id="imgId2">
+                        <!-- <layoutData>
+                            <FlexItemData id="GFID2" growFactor="1"/>
+                        </layoutData> -->
+                    </Image>
+                </HBox>
+            </content>
+        </Page>
+    </pages>
+    </App>
+</mvc:View>

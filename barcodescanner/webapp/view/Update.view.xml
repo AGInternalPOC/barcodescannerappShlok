@@ -1,0 +1,43 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="barcodescanner.controller.Update"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <App id="app_update">
+    <Page id="form_page" title="Employee Form">
+        <content>
+        <form:SimpleForm id="Simpleform_u">
+            <VBox id="main_vb" class="main_vb">
+                <HBox id="form_hb1" class="form_hb">
+                    <Label id="form_label_id" text="ID" />
+                    <Input id="Id" placeholder="Enter ID" value="{Id}" editable="false" />
+
+                    <Label id="form_label_name" text="Name" />
+                    <Input id="Name" placeholder="Enter Name" value="{Name}" editable="false"/>
+                </HBox>
+
+                <HBox id="form_hb2" class="form_hb">
+                    <Label id="form_label_dep" text="Department" />
+                    <Input id="Department" placeholder="Enter Department" value="{Department}" />
+                    <Button id='btn_scan' class="scan" icon="sap-icon://qr-code" text="SCAN" press="onScan"/>
+                </HBox>
+                <HBox id="form_hb3" class="form_hb">
+                    <Label id="form_label_dob" text="Date of Birth"  />
+                    <DatePicker id="Dob" placeholder="Select DOB" value="{Dob}"/>
+
+                    <Label id="form_label_sal" text="Salary" />
+                    <Input id="Salary" placeholder="Enter Salary" type="Number" value="{Salary}" />
+                </HBox>
+                <HBox id="form_hb4" class="form_hb">
+                    <Label id="form_label_mn" text="Mobile Number" />
+                    <Input id="MobNo" placeholder="Enter Mobile Number" type="Tel" value="{MobNo}" />
+                </HBox>
+                <HBox id="form_hb5" class="form_hb5">
+                    <Button id="form_back" class="form_btn" icon="sap-icon://undo" text="BACK" press="onBack"/>
+                    <Button id="form_save" class="form_btn" icon="sap-icon://upload-to-cloud" text="SAVE" press="onSave"/>
+                </HBox>
+            </VBox>
+            </form:SimpleForm>
+        </content>
+    </Page>
+    </App>
+</mvc:View>

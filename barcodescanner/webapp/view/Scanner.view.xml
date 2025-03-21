@@ -1,0 +1,71 @@
+<mvc:View controllerName="barcodescanner.controller.Scanner"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Shell id="shell">
+        <App id="app_3">
+            <pages>
+                <Page id="page" title="Employee Home">
+                    <content>
+                        <HBox id="hbox1" class="hbox1" >
+                            <Button id='btn' class="scan" icon="sap-icon://qr-code" text="SCAN" press="onScan"/>
+                            <!-- <Button id='post_scan' class='post' text="Upload" press="PostData"/> -->
+                             <Button id='get' class="get" icon="sap-icon://search" text="SEARCH" press="GetData"/>
+                            <Button id="seeall" icon="sap-icon://employee-lookup" press="loadalldata" text="See ALL Records"></Button>
+                            <Button id="genbtn" class="gen_btn" icon="sap-icon://bar-code" text="Generate Barcode" press="ToGenerate" />
+                        </HBox>
+
+                        <HBox id='hbox2' class='hbox2'>
+                            <HBox id="hbox2hb1">
+                                <Label id='id' class='id' text="ID"/>
+                                <!-- <Input id="eid" class="eid" value="" editable="false"/> -->
+                                <Input id="eid" class="eid" value="" editable="true"/> <!-- to allow mannual search -->
+                            </HBox>
+                             <HBox id="hbox2hb2">
+                                <Label id='name' class='name' text="Name"/>
+                                <!-- <Input id="ename" class="ename" value="" editable="false"/> -->
+                                <Input id="ename" class="ename" value="" editable="true"/> <!-- to allow mannual search -->
+                            </HBox>
+                        </HBox>
+
+                        <!-- <HBox id="vb2">
+                            <Button id='post' class='post' text="Upload" press="PostData"/>
+                            <Button id='get' class='get' text="See" press="GetData"/>
+                        </HBox> -->
+
+                            <smartTable:SmartTable 
+                                id="idSmartTable"
+                                class="idSmartTable"
+                                entitySet="EMPSet"
+                                header="Employee Details"                                
+                                tableType="ResponsiveTable"
+                                initiallyVisibleFields="Id,Name,Dob,MobNo,Department,Salary"
+                                enableExport="true"
+                                useVariantManagement="true"
+                                useTablePersonalisation="true"
+                                showRowCount="true"
+                                smartFilterId="idSmartFilterBar"
+                                persistencyKey="SmartTable_Explored"
+                                enableAutoBinding="false"
+                                beforeRebindTable="onBeforeRebindTable"
+                            >
+                                <Table id="tbl1"
+                                    mode="SingleSelectMaster"
+                                    selectionChange="onRowSelection">
+                                </Table>
+                            </smartTable:SmartTable>
+
+                            
+                      </content>
+                      <!-- <footer>
+                      <Bar id="tb">
+                      <Button id="btn2" text="Next" press="onPress"></Button>
+                      </Bar>
+                      </footer> -->
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

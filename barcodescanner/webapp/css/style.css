@@ -1,0 +1,124 @@
+.hbox1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 100%;
+    gap: 100px;
+    padding: 10px 0;
+}
+
+.hbox2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* Reduce the gap for better alignment */
+    padding: 10px 0;
+}
+
+.hbox2hb1, .hbox2hb2 {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust space between label and input */
+}
+.scan{
+    height: 45px;
+    width: 100px;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: normal;
+    border-radius: 8px;
+    cursor: pointer;
+    color: blue;
+}
+
+.get{
+    height: 45px;
+    width: 100px;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: normal;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.get:hover, .scan:hover {
+    color: rgb(116, 78, 255);
+}
+
+.main_vb {
+    align-self: center;
+    height: auto; /* Adjust height dynamically */
+    width: 50%; /* Set a good width for a form */
+    padding: 20px;
+    gap: 15px;
+    border: 2px solid #003366; /* Dark blue border */
+    background-color: #f0f4ff; /* Soft blue background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Smooth shadow effect */
+}
+
+/* Horizontal Box (Row) Styling */
+.form_hb {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Proper spacing between elements */
+    margin-bottom: 10px;
+}
+
+/* Labels */
+.form_hb Label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #003366; 
+    width: 120px;
+}
+
+.form_hb Input,
+.form_hb DatePicker {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #003366;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+.form_hb Input:focus,
+.form_hb DatePicker:focus {
+    outline: none;
+    border: 2px solid #0055cc; /* Slightly darker blue on focus */
+    box-shadow: 0px 0px 5px rgba(0, 85, 204, 0.5);
+}
+
+.form_save{
+    height: 45px;
+    width: 100px;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: normal;
+    border-radius: 8px;
+    cursor: pointer;
+    color: blue;
+}
+
+.form_hb5{
+    position: relative !important; 
+    right: 10px !important; 
+    bottom: 10px !important;
+}
+
+/* HBox for Buttons */
+.form_hb5 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.form_btn {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
