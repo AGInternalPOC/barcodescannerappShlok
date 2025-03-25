@@ -9,29 +9,30 @@ sap.ui.define(
   
       return Controller.extend("barcodescanner.controller.Update", {
         onInit: function() {
+            debugger;
           var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-          oRouter.getRoute("Routedestination").attachPatternMatched(this._onObjectMatched, this);
+        //   oRouter.getRoute("Routedestination").attachPatternMatched(this._onObjectMatched, this);
           oRouter.getRoute("Routedestination2").attachPatternMatched(this._onObjectMatched2, this);
       },
 
-    _onObjectMatched: function () {
-        var oModel = this.getView().getModel("employeeData"); // Get JSON model
-        var oData = oModel.getData();
+    // _onObjectMatched: function () {
+    //     var oModel = this.getView().getModel("employeeData"); // Get JSON model
+    //     var oData = oModel.getData();
     
-        if (oData) {
-            this.getView().byId("Id").setValue(oData.Id || "");
-            this.getView().byId("Name").setValue(oData.Name || "");
-            this.getView().byId("Department").setValue(oData.Department || "");
-            this.getView().byId("Dob").setValue(oData.Dob || "");
-            this.getView().byId("Salary").setValue(oData.Salary || "");
-            this.getView().byId("MobNo").setValue(oData.MobNo || "");
-        } else {
-            sap.m.MessageToast.show("No employee data found!");
-        }
-    },
-
+    //     if (oData) {
+    //         this.getView().byId("Id").setValue(oData.Id || "");
+    //         this.getView().byId("Name").setValue(oData.Name || "");
+    //         this.getView().byId("Department").setValue(oData.Department || "");
+    //         this.getView().byId("Dob").setValue(oData.Dob || "");
+    //         this.getView().byId("Salary").setValue(oData.Salary || "");
+    //         this.getView().byId("MobNo").setValue(oData.MobNo || "");
+    //     } else {
+    //         sap.m.MessageToast.show("No employee data found!");
+    //     }
+    // },
+    
     _onObjectMatched2: function(oEvent) {
-        
+        debugger;
         var oModel = this.getView().getModel("employeeData"); // Get JSON model
         var oData = oModel.getData();
     

@@ -60,18 +60,18 @@
                     </f:content>
                 </f:SimpleForm>
 
-                <HBox id="GHbox">
+                <VBox id="GVbox">
                     <Image densityAware="false" id="imgId">
                         <layoutData>
                             <FlexItemData id="GFID" growFactor="1"/>
                         </layoutData>
                     </Image>
-                    <Image  id="imgId2">
-                        <!-- <layoutData>
+                    <Image  id="imgId2" width="70vw">
+                        <layoutData>
                             <FlexItemData id="GFID2" growFactor="1"/>
-                        </layoutData> -->
+                        </layoutData>
                     </Image>
-                </HBox>
+                </VBox>
             </content>
         </Page>
     </pages>

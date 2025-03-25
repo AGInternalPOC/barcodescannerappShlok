@@ -1,27 +1,21 @@
-.hbox1{
+/* General Styles */
+.hbox1, .hbox2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;
-    width: 100%;
-    gap: 100px;
-    padding: 10px 0;
-}
-
-.hbox2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px; /* Reduce the gap for better alignment */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 50px;
     padding: 10px 0;
 }
 
 .hbox2hb1, .hbox2hb2 {
     display: flex;
     align-items: center;
-    gap: 10px; /* Adjust space between label and input */
+    gap: 10px;
 }
-.scan{
+
+/* Buttons */
+.scan, .get, .form_save {
     height: 45px;
     width: 100px;
     padding: 10px 20px;
@@ -29,48 +23,40 @@
     line-height: normal;
     border-radius: 8px;
     cursor: pointer;
-    color: blue;
+    transition: all 0.3s ease-in-out;
 }
 
-.get{
-    height: 45px;
-    width: 100px;
-    padding: 10px 20px;
-    font-size: 16px;
-    line-height: normal;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.get:hover, .scan:hover {
+.scan:hover, .get:hover, .form_save:hover {
     color: rgb(116, 78, 255);
 }
 
+/* Form Container */
 .main_vb {
     align-self: center;
-    height: auto; /* Adjust height dynamically */
-    width: 50%; /* Set a good width for a form */
+    height: auto;
+    width: 50%;
     padding: 20px;
     gap: 15px;
-    border: 2px solid #003366; /* Dark blue border */
-    background-color: #f0f4ff; /* Soft blue background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Smooth shadow effect */
+    border: 2px solid #003366;
+    background-color: #f0f4ff;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Horizontal Box (Row) Styling */
+/* Form Layout */
 .form_hb {
     display: flex;
     align-items: center;
-    gap: 15px; /* Proper spacing between elements */
+    gap: 15px;
     margin-bottom: 10px;
+    flex-wrap: wrap; /* Makes form elements wrap on small screens */
 }
 
 /* Labels */
 .form_hb Label {
     font-weight: bold;
     font-size: 14px;
-    color: #003366; 
+    color: #003366;
     width: 120px;
 }
 
@@ -87,38 +73,81 @@
 .form_hb Input:focus,
 .form_hb DatePicker:focus {
     outline: none;
-    border: 2px solid #0055cc; /* Slightly darker blue on focus */
+    border: 2px solid #0055cc;
     box-shadow: 0px 0px 5px rgba(0, 85, 204, 0.5);
 }
 
-.form_save{
-    height: 45px;
-    width: 100px;
-    padding: 10px 20px;
-    font-size: 16px;
-    line-height: normal;
-    border-radius: 8px;
-    cursor: pointer;
-    color: blue;
-}
-
-.form_hb5{
-    position: relative !important; 
-    right: 10px !important; 
-    bottom: 10px !important;
-}
-
-/* HBox for Buttons */
+/* Button Container */
 .form_hb5 {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-top: 20px;
+    margin-top: 20px; 
+    gap: 20px;
 }
 
-.form_btn {
-    padding: 10px 20px;
-    margin-left: 10px;
-    border-radius: 5px;
-    font-weight: bold;
+.genFooter{
+    display: flex;
+    justify-content: flex-end;
+    height: 30px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .main_vb {
+        width: 70%; /* Increase width for better fit on tablets */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hbox1, .hbox2 {
+        flex-direction:row; /* Stack elements vertically */
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .main_vb {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .form_hb {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form_hb Label {
+        width: auto;
+    }
+
+    .form_hb5 {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .scan, .get, .form_save {
+        width: 80px;
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .main_vb {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form_hb Label {
+        font-size: 12px;
+    }
+
+    .form_hb Input, .form_hb DatePicker {
+        font-size: 12px;
+        padding: 6px;
+    }
 }

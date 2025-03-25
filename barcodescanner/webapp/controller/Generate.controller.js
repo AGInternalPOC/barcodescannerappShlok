@@ -10,8 +10,7 @@ sap.ui.define(
   
       return Controller.extend("barcodescanner.controller.Generate", {
         onInit: function() {
-          // $.getScript("https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js")
-            
+          $.getScript("https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js")
         },
 
         GenerateQRCode: function () {
@@ -46,18 +45,39 @@ sap.ui.define(
           this.byId("imgId").setSrc(url);
         },
 
-        // GenerateBarCode: function () {
-        //   var oImage = this.getView().byId("imgId2");
-
-        //     // Generate Barcode
-        //     JsBarcode(oImage.getDomRef(),this.finalString, {
-        //         format: "CODE128", // Barcode format
-        //         lineColor: "#000",
-        //         width: 2,
-        //         height: 50,
-        //         displayValue: true
-        //     });
-        // }
+        GenerateBarCode: function () {
+          var oImage = this.getView().byId("imgId2");
+          
+          if (typeof JsBarcode === "undefined") {
+              // Load JsBarcode if not already loaded
+              $.getScript("https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js")
+                  .done(function () {
+                      JsBarcode(oImage.getDomRef(), this.finalString, {
+                          format: "CODE128",
+                          lineColor: "#000",
+                          width: 2,
+                          height: 50,
+                          displayValue: true
+                      });
+                  }.bind(this)) // Ensure "this" refers to the controller
+                  .fail(function () {
+                      sap.m.MessageToast.show("Failed to load JsBarcode");
+                  });
+          } else {
+              // JsBarcode is already loaded
+              JsBarcode(oImage.getDomRef(), this.finalString, {
+                  format: "CODE128",
+                  lineColor: "#000",
+                  width: 2,
+                  height: 50,
+                  displayValue: true
+              });
+          }
+      },
+      onBack : function() {
+        this.getOwnerComponent().getRouter().navTo("RouteScanner");
+      }
+      
 
       });
     }

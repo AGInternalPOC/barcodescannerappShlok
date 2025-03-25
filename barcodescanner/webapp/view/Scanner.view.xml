@@ -11,8 +11,8 @@
                     <content>
                         <HBox id="hbox1" class="hbox1" >
                             <Button id='btn' class="scan" icon="sap-icon://qr-code" text="SCAN" press="onScan"/>
-                            <!-- <Button id='post_scan' class='post' text="Upload" press="PostData"/> -->
-                             <Button id='get' class="get" icon="sap-icon://search" text="SEARCH" press="GetData"/>
+                            <Button id='get' class="get" icon="sap-icon://search" text="SEARCH" press="GetData"/>
+                            <Button id='post_scan' class='post' icon="sap-icon://upload" text="UPLOAD" press="PostData"/>
                             <Button id="seeall" icon="sap-icon://employee-lookup" press="loadalldata" text="See ALL Records"></Button>
                             <Button id="genbtn" class="gen_btn" icon="sap-icon://bar-code" text="Generate Barcode" press="ToGenerate" />
                         </HBox>
@@ -59,11 +59,7 @@
 
                             
                       </content>
-                      <!-- <footer>
-                      <Bar id="tb">
-                      <Button id="btn2" text="Next" press="onPress"></Button>
-                      </Bar>
-                      </footer> -->
+                      
                 </Page>
             </pages>
         </App>

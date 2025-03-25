@@ -87,7 +87,6 @@ function (Controller,MessageBox, MessageToast, JSONModel, BarcodeScanner) {
         },
         
         onBeforeRebindTable: function (oEvent) {
-        
             var empId = this.getView().byId("eid").getValue();
             var empName = this.getView().byId("ename").getValue();
             var bindingParams = oEvent.getParameter("bindingParams");
